@@ -2,24 +2,29 @@
 
 require "config.php";
 
-use App\Student;
+use App\Pets;
 
-$students = Student::list();
+$Pets = Pets::list();
 ?>
 
-<h1>Students</h1>
+<h1>Pets</h1>
 
 <table border="1" cellpadding="5">
-<?php foreach ($students as $student): ?>
+<?php foreach ($Pets as $pet): ?>
 <tr>
-<td><?php echo $student->getId(); ?></td>
-<td><?php echo $student->getFullName(); ?></td>
-<td><?php echo $student->getEmail(); ?></td>
+<td><?php echo $pet->getId(); ?></td>
+<td><?php echo $pet->getName(); ?></td>
+<td><?php echo $pet->getGender(); ?></td>
+<td><?php echo $pet->getBirthdate(); ?></td>
+<td><?php echo $pet->getOwner(); ?></td>
+<td><?php echo $pet->getEmail(); ?></td>
+<td><?php echo $pet->getAddress(); ?></td>
+<td><?php echo $pet->getContact(); ?></td>
 <td>
-	<a href="edit-student.php?id=<?php echo $student->getId(); ?>">EDIT</a>
+	<a href="edit-student.php?id=<?php echo $pet->getId(); ?>">EDIT</a>
 </td>
 <td>
-	<a href="delete-student.php?id=<?php echo $student->getId(); ?>">DELETE</a>
+	<a href="delete-student.php?id=<?php echo $pet->getId(); ?>">DELETE</a>
 </td>
 </tr>
 <?php endforeach ?>
